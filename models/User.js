@@ -1,5 +1,5 @@
 'use strict';
-
+//Changed
 /**
  * Module dependencies.
  */
@@ -26,24 +26,7 @@ var validateLocalStrategyPassword = function(password) {
  */
 var UserSchema = new Schema({
 
-    firstName: {
-        type: String,
-        trim: true,
-        default: '',
-        required: 'First Name required'
-      },
-
-    lastName: {
-        type: String,
-        trim: true,
-        default: '',
-        required: 'Last Name required'
-      },
-
-    displayName: {
-        type: String,
-        trim: true
-    },
+    
     email: {
         type: String,
         trim: true,
@@ -56,26 +39,7 @@ var UserSchema = new Schema({
         trim: true,
         required: 'User Name required'
     },
-    photo: {
-        type: String,
-        default: 'http://www.ee-ip.org/sites/default/files/default_images/default-user.png',
-        trim: true
-    },
-    description: {
-        type: String,
-        default: '',
-        trim: true
-    },
-    linkedin: {
-        type: String,
-        default: '',
-        trim: true
-    },
-    twitter: {
-        type: String,
-        default: '',
-        trim: true
-    },
+    
     password: {
         type: String,
         default: '',

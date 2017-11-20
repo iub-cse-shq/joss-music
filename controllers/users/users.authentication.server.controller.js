@@ -73,7 +73,13 @@ exports.signinView = function(req, res) {
 		request: req
 	});
 };
-
+ //// Changed
+exports.signupView = function(req, res) {
+	res.render('./../public/views/user/JossSignUp.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};
 /**
  * Signout
  */
