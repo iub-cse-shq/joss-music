@@ -1,96 +1,45 @@
-'use strict';
-//Changed
-/**
- * Module dependencies.
- */
-var mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
-    crypto = require('crypto');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var SongSchema = {
 
-/**
- * A Validation function for local strategy properties
- */
-var validateLocalStrategyProperty = function(property) {
-    return ((this.provider !== 'local' && !this.updated) || property.length);
-};
+  songname: {
+    type: String,
+    default: '',
+    trim: true,
+    required: 'Name required'
+  },
 
-/**
- * A Validation function for local strategy password
- */
-var validateLocalStrategyPassword = function(password) {
-    return (this.provider !== 'local' || (password && password.length > 6));
-};
+  description: {
+    type: String,
+    default: '',
+    trim: true,
 
-/**
- * User Schema
- */
-var UserSchema = new Schema({
+  },
+  
+  artist: {
+    type: Number,
+    default: '',
+    required: 'price required'
 
-    
-    email: {
-        type: String,
-        trim: true,
-        unique: 'Email already exists',
-        match: [/.+\@.+\..+/, 'Please fill a valid email address'],
-        required: 'Email required'
-    },
-    username: {
-        type: String,
-        trim: true,
-        required: 'User Name required'
-    },
-    
-    password: {
-        type: String,
-        default: '',
-        validate: [validateLocalStrategyPassword, 'Password should be longer'],
-        required: 'Password required'
-    },
-    salt: {
-        type: String
-    },
-    provider: {
-        type: String,
-        required: 'Provider is required'
-    },
-    providerData: {},
-    additionalProvidersData: {},
-    roles: {
-        type: [{
-            type: String,
-            enum: ['user', 'admin']
-        }],
-        default: ['user']
-    },
-    updated: {
-        type: Date
-    },
-    created: {
-        type: Date,
-        default: Date.now
-    },
-    /* For reset password */
-    resetPasswordToken: {
-        type: String
-    },
-    resetPasswordExpires: {
-        type: Date
-    }
-});
+  },
+  
+  genre: {
+    type: Number,
+    default: '',
+    required: 'Quantity required'
 
-/**
- * Hook a pre save method to hash the password
- */
+  },
 
-/**
- * Create instance method for hashing a password
- */
+  imageSong: {
+    type: Schema.ObjectId,
+    ref: 'User'
+  },
 
+  song: {
+    type: Date,
+    default: Date.now
+  }
+}
 
-/**
- * Create instance method for authenticating user
- */
-
-
-var User = mongoose.model('User', UserSchema, 'users');
-module.exports = User;
+var Product = mongoose.model('Product', ProductSchema, 'products');
+module.exports = Product;
