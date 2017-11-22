@@ -80,6 +80,8 @@ exports.signupView = function(req, res) {
 		request: req
 	});
 };
+
+
 /**
  * Signout
  */
