@@ -6,4 +6,6 @@ module.exports = function(app) {
 	app.route('/').get(core.index);
 	app.route('/about').get(core.about);
 	app.route('/profile').get(core.profile);
+	//app.route('/ProfilePage').get(users.ProfilePageView);
+	
 };

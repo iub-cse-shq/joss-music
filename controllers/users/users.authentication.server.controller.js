@@ -67,15 +67,29 @@ exports.signin = function(req, res, next) {
 	})(req, res, next);
 };
 
-exports.signinView = function(req, res) {
+/*exports.signinView = function(req, res) {
 	res.render('./../public/views/user/signin.ejs', {
 		user: req.user || null,
 		request: req
 	});
-};
+};*/
  //// Changed
+exports.signinView = function(req, res) {
+	res.render('./../public/views/user/JossSignIn.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};
+ 
 exports.signupView = function(req, res) {
 	res.render('./../public/views/user/JossSignUp.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};
+
+exports.ProfilePageView = function(req, res) {
+	res.render('./../public/views/ProfilePage.ejs', {
 		user: req.user || null,
 		request: req
 	});
