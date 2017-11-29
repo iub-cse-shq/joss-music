@@ -26,10 +26,12 @@ var SongSchema = {
   genre: {
     type: String,
     default: '',
-    
-
   },
-
+  
+  link: {
+    type: String,
+    default: '',
+  },
  
 }
 
