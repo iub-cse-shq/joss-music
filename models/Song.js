@@ -35,5 +35,6 @@ var SongSchema = {
  
 }
 
-var Song = mongoose.model('Song', SongSchema, 'Songs');
+var Song = mongoose.model('Song', SongSchema, 'songs');
 module.exports = Song;
+

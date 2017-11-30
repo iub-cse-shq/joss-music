@@ -123,10 +123,9 @@
   </fieldset>
 </div>
 
-
         <script src="/lib/jquery/dist/jquery.min.js"></script>
         <script>
-            var song = {title: ""};
+            var song = {};
             $("#name").change(function(){
                 song.name = $("#name").val();
             });
@@ -138,16 +137,16 @@
             
             $("#artist").change(function(){
                 //song.price = undefined;
-                song.price = $("#artist").val();
+                song.artist = $("#artist").val();
                 
             });
             
             $("#genre").change(function(){
-                song.quantity = $("#genre").val();
+                song.genre = $("#genre").val();
             });
             
             $("#link").change(function(){
-                song.quantity = $("#link").val();
+                song.link = $("#link").val();
             });
             
             $("#submit").click(function(){
@@ -158,10 +157,11 @@
                     data: song
                 }).done(function(response){
                     console.log(response);
-                    window.location.replace("/songs/"+response._id);
+                    //window.location.replace("/"+response._id);
+                    window.location.replace("/all");
                 }).fail(function(response){
-                   /* $("#error").text(JSON.parse(response.responseText).message);
-                    console.log(JSON.parse(response.responseText).message);*/
+                   // $("#error").text(JSON.parse(response.responseText).message);
+                    console.log(response);
                 });
             });
         </script>

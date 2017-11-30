@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>SONG</title>
+    </head>
+    <body>
+        <h1>song</h1>
+        <% console.log(request.song) %>
+        <h2> Name: <%= request.song.name %></h2>
+        <p> <%= request.song.description %> </p>
+        <h4>Artist: <%= request.song.artist %></h4>
+        <h4>Genre: <%= request.song.genre %></h4>
+        <audio class="img-rounded"  controls style="height:40px; width:200px; margin-top:40px; padding-top:30; ">
+        <source src="<%= request.song.link %>"  >
+       <!-- <h4>Link: <%= request.song.link %></h4>-->
+    </body>
+</html>

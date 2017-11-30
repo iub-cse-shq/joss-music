@@ -61,7 +61,32 @@
 </div>
     <div class="JD">
       WELCOME
+              <h1>Song List</h1>
+        <% console.log(songs) %>
+          <% for(var i=0; i<songs.length; i++) { %>
+          <h1> <a href="/song/<%=songs[i]._id %>">
+            <%= songs[i].name %> </a> </h1>
+            
+            <% } %>
+            <div action="/action_page.php">
+          
+          <button id="submit" class="btn btn-primary" >Upload new song
+        </div>
+       
+      </div>
     </div>
+    
+    </br></br>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+    
+        $("#submit").click(function(){
+                    window.location.replace("/new");
+                console.log("jasnd");
+                
+            });
+          
+    </script>    
 
 
   </body>
