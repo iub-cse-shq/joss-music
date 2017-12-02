@@ -16,6 +16,9 @@ module.exports = function(app){
 app.route('/song/:songId')
     .get(songs.view);
 
+ app.route('/home')
+    .get(songs.home);
+
 /*
 app.route('/api/songs/:songId')
 	.get(songs.read)

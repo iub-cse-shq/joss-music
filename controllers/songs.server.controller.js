@@ -1,9 +1,30 @@
 var mongoose = require('mongoose');
 var Song = require('./../models/Song.js');
+var User = require('./../models/User.js');
 var errorHandler = require('./errors.server.controller');
 var _ = require('lodash');
 
 exports.all = function(req, res){
+  Song.find(function(err, data) {
+    if (err) {
+      return res.status(400).send({
+
+  				message: errorHandler.getErrorMessage(err)
+  			});
+    } else {
+      console.log("api called");
+
+        res.render('./../public/views/all.ejs', {
+          user: req.user || null,
+          request: req,
+          songs: data
+        });
+    }
+  });
+  
+};
+
+exports.home = function(req, res){
   Song.find(function(err, data) {
     if (err) {
       return res.status(400).send({
@@ -33,6 +54,7 @@ exports.new = function(req, res){
 module.exports.create = function(req, res) {
   var song = new Song(req.body);
   song.user = req.user;
+  var user = new User(req.body);
   song.save(function(err, data) {
     if (err) {
       return res.status(400).send({

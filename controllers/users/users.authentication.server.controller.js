@@ -105,6 +105,8 @@ exports.signout = function(req, res) {
 		}
 	});
 	res.status(200).send({message:"signed out"});
+	
+
 };
 
 /**
