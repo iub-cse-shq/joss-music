@@ -48,15 +48,15 @@
           <a class="navbar-brand" href="#">JOSS MUSIC</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="#"><a href="#">Home</a></li>
-          <li><a href="#" style="float:right">Profile</a></li>
+          <li class="#"><a href="/home">Home</a></li>
+          <!--<li><a href="#" style="float:right">Profile</a></li>-->
           <li><a href="/new" style="float:right">Song Upload</a></li>
           <li><input type="text" class="" placeholder="Search" style="width:300px; margin-top:10px">
           <button class="btn btn-default" type="submit">
                 <i >go</i>
               </button>
               </li>
-              <li><a href="#" style="float:right;">Logout</a></li>
+              <li><a href="/auth/signout" style="float:right;">Logout</a></li>
           
         </ul>
         <div class="navbar-div navbar-left">
@@ -175,7 +175,7 @@
                 }).done(function(response){
                     console.log(response);
                     //window.location.replace("/"+response._id);
-                    window.location.replace("/all");
+                    window.location.replace("/home");
                 }).fail(function(response){
                    // $("#error").text(JSON.parse(response.responseText).message);
                     console.log(response);
