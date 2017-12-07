@@ -5,6 +5,23 @@ var errorHandler = require('./errors.server.controller');
 var _ = require('lodash');
 
 exports.all = function(req, res){
+  User.find(function(err, data) {
+    if (err) {
+      return res.status(400).send({
+
+  				message: errorHandler.getErrorMessage(err)
+  			});
+    } else {
+      console.log("api called");
+
+        res.render('./../public/views/all.ejs', {
+          user: req.user || null,
+          request: req,
+          user: data
+        });
+    }
+  });
+  
   Song.find(function(err, data) {
     if (err) {
       return res.status(400).send({
@@ -22,6 +39,27 @@ exports.all = function(req, res){
     }
   });
   
+};
+
+exports.edit = function(req, res){
+  res.render('./../public/views/edit.ejs', {
+    user: req.user || null,
+    request: req
+  });
+};
+
+module.exports.update = function(req, res) {
+  var song = req.song;
+
+  	song = _.extend(song, req.body);
+
+  	song.save(function(err) {
+  		if (err) {
+  			return res.status(400).send();
+  		} else {
+  			res.json(song);
+  		}
+  	});
 };
 
 exports.home = function(req, res){

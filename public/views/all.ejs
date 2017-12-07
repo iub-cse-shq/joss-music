@@ -89,6 +89,19 @@
 </div>
     <div class="JD">
       WELCOME
+      <h1>User List</h1>
+        <% console.log(user) %>
+          <% for(var i=0; i<user.length; i++) { %>
+          <h1> <a href="/user/<%=user[i].email %>">
+            <%= user[i].username %> </a> </h1>
+            
+            <% } %>
+            <div action="/action_page.php">
+          
+          
+        </div>
+      
+      
               <h1>Song List</h1>
         <% console.log(songs) %>
           <% for(var i=0; i<songs.length; i++) { %>

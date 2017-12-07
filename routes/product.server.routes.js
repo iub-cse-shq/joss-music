@@ -23,12 +23,15 @@ app.route('/song/:songId')
 app.route('/api/songs/:songId')
 	.get(songs.read)
   .delete(users.requiresLogin, songs.delete);
-
-	app.route('/api/songs/edit/:songId')
+*/
+ app.route('/song/edit/:songId')
+    .get(songs.edit);
+ 
+	app.route('/api/song/edit/:songId')
 	.get(songs.read)
 	.put(users.requiresLogin, songs.update);
 
-*/
+
 app.param('songId', songs.songByID);
 
 
