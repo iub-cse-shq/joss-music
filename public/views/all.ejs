@@ -13,14 +13,16 @@
         background-size: 2200px 1080px;
         
         
+        
     }
     .JD{
       background-color: black;
       margin: auto;
-      padding: 50px;
-      background:rgba(255,255,255,0.5);
-      width: 400px;
-      height: 300px;
+      padding: auto;
+      padding-left: 30px;
+      background:rgba(255,255,255,0.1);
+      /*width: 400px;
+      height: 300px;*/
     }
     .header{
       text-align: center;
@@ -59,7 +61,7 @@
         </div>
       </div>
     </nav>
-.......................................................
+
 
   <!--  <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -84,31 +86,21 @@
   </div>
 </nav>
 -->
-<div class="header">
+<div class="header JD">
 
       <h1 style="text-shadow: 1px 1px #000000; color: white "><strong>Welcome to Joss Music</strong></h1>
       <h2 style="text-shadow: 1px 1px #000000; color: white "><strong>Share you MUSIC Worldwide</strong></h2>
 </div>
     <div class="JD">
-      WELCOME
-      <h1>User List</h1>
-        <% console.log(user) %>
-          <% for(var i=0; i<user.length; i++) { %>
-          <h1> <a href="/user/<%=user[i].email %>">
-            <%= user[i].username %> </a> </h1> 
-            <button id="delete" class="btn btn-default">Delete</button>
-            <% } %>
-            <div action="/action_page.php">
+      <br>
+   
           
-          
-        </div>
-      
-      
-              <h1>Song List</h1>
+        
+              <h1 style="color:black;"><strong>Song List</strong></h1>
         <% console.log(songs) %>
           <% for(var i=0; i<songs.length; i++) { %>
           <h1> <a href="/song/<%=songs[i]._id %>">
-            <%= songs[i].name %> </a><button id="delete" class="btn btn-default">Delete</button> </h1>
+            <%= songs[i].name %> </a></h1>
             
             <% } %>
             <div action="/action_page.php">
@@ -121,7 +113,17 @@
     </div>
     
     </br></br>
-    
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        
+        $("#submit").click(function(){
+                    window.location.replace("/new");
+                console.log("jasnd");
+                
+            });
+        
+    </script>    
+
 
 
   </body>

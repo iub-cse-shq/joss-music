@@ -34,6 +34,11 @@
       margin: auto;
       padding-bottom: 60px;
     }
+    body {
+        background-image: url("https://wallpaperscraft.com/image/guitar_music_strings_bass_guitar_electric_guitar_82964_1920x1080.jpg");
+        background-repeat: no-repeat;
+        background-size: 2200px 1080px;
+    }
     </style>
   </head>
   <body>
@@ -81,10 +86,7 @@
       </div>
 </div>
 <div class="Image">
-    <div action="/action_page.php">
-      <p>Select Image:</p><input type="file" name="pic" class="btn btn-primary" accept="image/*">
 
-    </div>
 
 </div>
   </br></br></br>
@@ -126,10 +128,11 @@
       <div class="col-lg-10 col-lg-offset-2">
       </br></br>
         <div action="/action_page.php">
-          <input type="file" name="pic"  accept="audio/basic/*">
+       
           <button id="submit" class="btn btn-primary" >Upload
+           <button type="reset" class="btn btn-default">Cancel</button>
         </div>
-        <button type="reset" class="btn btn-default">Cancel</button>
+       
       </div>
     </div>
   </fieldset>

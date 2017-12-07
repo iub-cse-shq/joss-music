@@ -9,15 +9,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style media="screen">
 
+    body {
+        background-image: url("https://i.pinimg.com/originals/10/98/b0/1098b02dce8178815b3f0b2df333db31.jpg");
+        background-repeat: no-repeat;
+        background-size: 2200px 1080px;
+        
+        
+        
+    }
     .JD{
       background-color: black;
       margin: auto;
-      padding: 50px;
-      background:rgba(255,255,255,0.5);
-      width: 400px;
-      height: 405px;
-
-
+      padding: auto;
+      padding-left: 30px;
+      background:rgba(255,255,255,0.1);
+      /*width: 400px;
+      height: 300px;*/
     }
     .Image{
       width: 400px;
@@ -64,7 +71,7 @@
         </div>
       </div>
     </nav>
-        
+    <div class="header JD">
         <h1>Profile</h1>
         <% console.log(request.user) %>
         <h2> Name: <%= request.user.username %></h2>
@@ -105,6 +112,8 @@
                 });
             }); 
        </script>
+      
+    </div>   
        
  
     </body>
