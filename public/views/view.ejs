@@ -1,9 +1,71 @@
+<!DOCTYPE html>
+
 <html>
     <head>
-        <title>SONG</title>
-    </head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style media="screen">
+
+    .JD{
+      background-color: black;
+      margin: auto;
+      padding: 50px;
+      background:rgba(255,255,255,0.5);
+      width: 400px;
+      height: 405px;
+
+
+    }
+    .Image{
+      width: 400px;
+      height: 10px;
+      padding: 50px;
+      margin: auto;
+    }
+    .header{
+      text-align: center;
+
+      color: DarkGray;
+      text-decoration-style: wavy;
+
+      margin: auto;
+      padding-bottom: 60px;
+    }
+    </style>
+  </head>
     <body>
-        <h1>Profile  </h1>
+        <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">JOSS MUSIC</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="#"><a href="#">Home</a></li>
+          <li><a href="#" style="float:right">Profile</a></li>
+          <li><a href="/new" style="float:right">Song Upload</a></li>
+          <li><input type="text" class="" placeholder="Search" style="width:300px; margin-top:10px">
+          <button class="btn btn-default" type="submit">
+                <i >go</i>
+              </button>
+              </li>
+              <li><a href="#" style="float:right;">Logout</a></li>
+          
+        </ul>
+        <div class="navbar-div navbar-left">
+          <div class="input-group">
+            
+            <div class="input-group-btn">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+        
+        <h1>Profile</h1>
         <% console.log(request.user) %>
         <h2> Name: <%= request.user.username %></h2>
         <h2> Name: <%= request.user.email %></h2>
@@ -13,8 +75,37 @@
         <p> <%= request.song.description %> </p>
         <h4>Artist: <%= request.song.artist %></h4>
         <h4>Genre: <%= request.song.genre %></h4>
+         <button id="edit" class="btn btn-default">Edit</button>
+         <button id="delete" class="btn btn-danger">DELETE</button>
         <audio class="img-rounded"  controls style="height:40px; width:200px; margin-top:40px; padding-top:30; ">
         <source src="<%= request.song.link %>"  >
-       <!-- <h4>Link: <%= request.song.link %></h4>-->
+       <!-- <h4>Link:</h4>-->
+       
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+       <script>
+       var songId = <%- JSON.stringify(request.song._id) %>;
+           $("#edit").click(function(){
+               window.location.replace("/song/edit/" + <%- JSON.stringify(request.song._id) %>);
+                console.log("jasnd");
+           });
+           
+           $("#delete").click(function(){
+                
+                $.ajax({
+                    method: "DELETE",
+                     url: "/api/songs/"+songId,
+                    
+                }).done(function(response){
+                    console.log(response);
+                    //window.location.replace("/"+response._id);
+                    window.location.replace("/all");
+                }).fail(function(response){
+                   // $("#error").text(JSON.parse(response.responseText).message);
+                    console.log(response);
+                });
+            }); 
+       </script>
+       
+ 
     </body>
 </html>

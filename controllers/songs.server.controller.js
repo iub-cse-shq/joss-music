@@ -5,6 +5,7 @@ var errorHandler = require('./errors.server.controller');
 var _ = require('lodash');
 
 exports.all = function(req, res){
+  
   User.find(function(err, data) {
     if (err) {
       return res.status(400).send({
@@ -108,6 +109,17 @@ module.exports.create = function(req, res) {
 
 module.exports.read = function(req, res) {
   res.json(req.song);
+};
+
+exports.delete = function(req, res) {
+	var song = req.song;
+	song.remove(function(err) {
+		if (err) {
+			return res.status(400).send();
+		} else {
+			res.json(song);
+		}
+	});
 };
 
 

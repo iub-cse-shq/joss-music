@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style media="screen">
 
     .JD{
@@ -91,31 +94,31 @@
     <legend>EDIT</legend>
     <div class="div-group">
       <div class="col-md-8">
-        <input type="text" class="div-control" id="name" placeholder="Song Name" style="width:250px">
+        <input type="text" class="div-control" id="name" value="<%= request.song.name %>" style="width:250px">
       </div>
     </div>
 
     <div class="div-group">
       <div class="col-md-8">
-        <input type="text" class="div-control" id="description" placeholder="Description" style="width:250px">
+        <input type="text" class="div-control" id="description" value="<%= request.song.description %>" style="width:250px">
       </div>
     </div>
 
     <div class="div-group">
       <div class="col-md-8">
-        <input type="text" class="div-control" id="artist" placeholder="artist" style="width:250px">
+        <input type="text" class="div-control" id="artist" value="<%= request.song.artist %>" style="width:250px">
       </div>
     </div>
     
     <div class="div-group">
       <div class="col-md-8">
-        <input type="text" class="div-control" id="genre" placeholder="Genre" style="width:250px">
+        <input type="text" class="div-control" id="genre" value="<%= request.song.genre %>" style="width:250px">
       </div>
     </div>
 
     <div class="div-group">
       <div class="col-md-8">
-        <input type="text" class="div-control" id="link" placeholder="Droplink" style="width:250px">
+        <input type="text" class="div-control" id="link" value="<%= request.song.link %>" style="width:250px">
       </div>
     </div>
 

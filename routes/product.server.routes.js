@@ -19,11 +19,12 @@ app.route('/song/:songId')
  app.route('/home')
     .get(songs.home);
 
-/*
+
 app.route('/api/songs/:songId')
 	.get(songs.read)
   .delete(users.requiresLogin, songs.delete);
-*/
+
+
  app.route('/song/edit/:songId')
     .get(songs.edit);
  

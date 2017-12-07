@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style media="screen">
     body {
-        background-image: url("./images/CoverPic2.jpg");
+        background-image: url("https://wallpapercave.com/wp/lwfQm84.jpg");
         background-repeat: no-repeat;
         background-size: 2200px 1080px;
         
@@ -93,8 +95,8 @@
         <% console.log(user) %>
           <% for(var i=0; i<user.length; i++) { %>
           <h1> <a href="/user/<%=user[i].email %>">
-            <%= user[i].username %> </a> </h1>
-            
+            <%= user[i].username %> </a> </h1> 
+            <button id="delete" class="btn btn-default">Delete</button>
             <% } %>
             <div action="/action_page.php">
           
@@ -106,28 +108,20 @@
         <% console.log(songs) %>
           <% for(var i=0; i<songs.length; i++) { %>
           <h1> <a href="/song/<%=songs[i]._id %>">
-            <%= songs[i].name %> </a> </h1>
+            <%= songs[i].name %> </a><button id="delete" class="btn btn-default">Delete</button> </h1>
             
             <% } %>
             <div action="/action_page.php">
           
           <button id="submit" class="btn btn-primary" >Upload new song
+          
         </div>
        
       </div>
     </div>
     
     </br></br>
-    <script src="/lib/jquery/dist/jquery.min.js"></script>
-    <script>
     
-        $("#submit").click(function(){
-                    window.location.replace("/new");
-                console.log("jasnd");
-                
-            });
-          
-    </script>    
 
 
   </body>
