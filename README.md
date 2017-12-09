@@ -1,32 +1,34 @@
-**How to set up the code**
+SKYWAY SOFT
+------------
+Juned Ahmed Chowdhury - 1430211
+Mahbuba Rahman Moushumi - 1410315
+MD. T.A.M. Tusar - 143016
 
-1. Install [Node.js](https://nodejs.org/en/download/) and [MongoDB](https://www.mongodb.com/download-center?jmp=nav) on your computer
+-----------------
+Idea and Purpose
+------------------
 
-2. Download this code, and from command prompt run:
+An online platform that provides tools and opportunities for startup musicians without paying 
+to promote their music and manage their careers in Bangladesh.
 
-   `npm install`
+Current music streaming sites: GP music, Banglalink vibe, gaan etc (they follow paid or subscription system)
+-To create the first free open music platform in Bangladesh.
+-To allow musicians to share recordings with each other and with their fans.
+-The users always do not have to be well known/established musician to upload their songs.
+-To create a platform where the users will be able to listen or download songs of their favorite artist without paying, 
+-which as a result will help that artist especially unknown artist to have a fan base.
+
+--------------------------
+Key Features Implemented
+--------------------------
+-SIGN IN
+-SIGN UP
+-ALL
+-VIEW
+-DOWNLOAD
+-EDIT
+-UPLOAD
+-DELETE
+-LOGOUT
 
 
-   `bower install`
-
-
-3. To run the code, run:
-
-    `node server.js`
-
-    
-4. In the browser open http://localhost:3000/, and you should see the index page
-
-**Exposed APIs**:
-
-GET **/api/articles** (returns list of articles)
-
-POST **/api/articles** (create new article)
-
-GET **/api/articles/:articleId** (returns an article with matching id)
-
-DELETE **/api/articles/:articleId** (deletes the matching article)
-
-GET **/api/articles/edit/:articleId** (returns an article with matching id)
-
-PUT **/api/articles/edit/:articleId** (updates the matching article)
